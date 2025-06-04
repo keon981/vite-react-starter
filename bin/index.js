@@ -26,7 +26,7 @@ fs.cpSync(templateDir, projectDir, { recursive: true, });
 
 /** To avoid dotfiles being included in the template repo,
   we store them without a dot and rename them after copying. */
-['gitignore', 'npmrc'].forEach((file) => {
+['gitignore', 'npmrc', 'env'].forEach((file) => {
   fs.renameSync(
     path.join(projectDir, file),
     path.join(projectDir, `.${file}`)
